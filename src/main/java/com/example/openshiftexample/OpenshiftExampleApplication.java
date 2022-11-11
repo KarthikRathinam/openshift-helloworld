@@ -24,10 +24,10 @@ public class OpenshiftExampleApplication {
             value = "/process",
             method = RequestMethod.POST,
             consumes = "text/plain")
-    public void process(@RequestBody String payload) throws Exception {
+    public String process(@RequestBody String payload) throws Exception {
 
-        System.out.println(payload);
-
+        return payload;
+    
     }
     
     public static void main(String[] args) {
