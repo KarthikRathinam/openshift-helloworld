@@ -19,7 +19,17 @@ public class OpenshiftExampleApplication {
     public String welcome(@PathVariable String input) {
         return "Hi " + input +" welcome to Openshift example";
     }
+    
+    @RequestMapping(
+            value = "/process",
+            method = RequestMethod.POST,
+            consumes = "text/plain")
+    public void process(@RequestBody String payload) throws Exception {
 
+        System.out.println(payload);
+
+    }
+    
     public static void main(String[] args) {
         SpringApplication.run(OpenshiftExampleApplication.class, args);
     }
